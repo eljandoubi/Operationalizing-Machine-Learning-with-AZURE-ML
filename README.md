@@ -104,22 +104,22 @@ This is the content of the API, diplaying the methods used to interact with the 
 And this is the input for the **/score** POST method that returns our deployed model's preditions.
 
 *Swagger documentation for the HTTP API of the model*
-![Swagger documentation for the HTTP API of the model](screen/SwaggerDeploy.png)
+![Swagger documentation for the HTTP API of the model](screen/SwaggerDeploy.PNG)
 
-![Swagger documentation for the HTTP API of the model](screen/SwaggerPayload.png)
+![Swagger documentation for the HTTP API of the model](screen/SwaggerPayload.PNG)
 
 ### Consume model endpoints
 Finally, it's time to interact with the model and feed some test data to it. We do this by providing the **scoring_uri** and the **key** to the **endpoint.py** script and running it.
 
 *Figure 23: Consume the endpoint*
-![Consume the endpoint](screen/ConsumeEndpoint.png)
+![Consume the endpoint](screen/ConsumeEndpoint.PNG)
 After modifying both the scoring_uri and the key to match the key for my service and the URI that was generated after deployment, I ran the endpoint.py script to get inference from the deployed model.
 
 #### (Optional) Benchmark
 To do this, we make sure **Apache Benchmark** is installed and available. After executing the **endpoint.py** script, we run the **benchmark.sh** scripe to load-test our deployed model. Checking if *Apache Benchmark* is available and running the benchmark.sh script. Results of load-testing our deployed model. This gives us insights on things like: Requests per second, Average time per request, Number of failed requests, etc.
 
 *Benchmark*
-![Benchmark](screen/Benchmark.png)
+![Benchmark](screen/Benchmark.PNG)
 
 
 ### Create and publish a pipeline
