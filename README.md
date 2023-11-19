@@ -79,21 +79,17 @@ The model is successfully deployed, and we can access the model endpoint in the 
 * Deploy the best model*
 ![Deploy the best model](screen/deployBest.png)
 
-![Deploy the best model](images/Deploybestmodel4.png)
-
-*Figure 14: Endpoint*
-![Deploy the best model](images/Deployedmodel.png)
-In this section, we can see details about the model endpoint as well as information on how to consume it.
+![Deploy the best model](screen/deployHealthy.png)
 
 ### Enable logging
 Enabling Application Insights and Logs could have been done at the time of deployment, but for this project we achieved it using Azure Python SDK.
 
-*Figure 15-16-17: Execute logs.py*
-![Execute logs.py](images/logs.py1.png)![Execute logs.py](images/logs.py2.png)![Execute logs.py](images/logs.py3.png)
+*Execute logs.py*
+![Execute logs.py](screen/logs.png)
 Running the logs.py script requires interactive authentication, after successfully logging in, we can see the logs in the screenshots above.
 
 *Figure 18: Application Insight*
-![Application Insight](images/Deployedmodel5.png)
+![Application Insight](screen/Insights.png)
 By running the logs.py script, we enable *Application Insight*.
 
 ### Swagger Documentation
@@ -102,63 +98,48 @@ To consume our best AutoML model using Swagger, we first need to download the **
 Then we run the **swagger.sh** and **serve.py** files to be able to interact with the swagger instance running with the documentation for the HTTP API of the model.
 
 *Figure 19: Default Swagger page*
-![Default Swagger page](images/localhost1.png)
 This is the default *Swagger* documentation before running the swagger.sh script.
-
-*Figure 20-21-22: Swagger documentation for the HTTP API of the model*
-![Swagger documentation for the HTTP API of the model](images/localhost.png)
 After running the script, we can find our best model's documentation instead of the default Swagger page.
-
-![Swagger documentation for the HTTP API of the model](images/localhost2.png)
 This is the content of the API, diplaying the methods used to interact with the model.
-
-![Swagger documentation for the HTTP API of the model](images/localhost3.png)
 And this is the input for the **/score** POST method that returns our deployed model's preditions.
+
+*Swagger documentation for the HTTP API of the model*
+![Swagger documentation for the HTTP API of the model](screen/SwaggerDeploy.png)
+
+![Swagger documentation for the HTTP API of the model](screen/SwaggerPayload.png)
 
 ### Consume model endpoints
 Finally, it's time to interact with the model and feed some test data to it. We do this by providing the **scoring_uri** and the **key** to the **endpoint.py** script and running it.
 
 *Figure 23: Consume the endpoint*
-![Consume the endpoint](images/endpoint.py1.png)
+![Consume the endpoint](screen/ConsumeEndpoint.png)
 After modifying both the scoring_uri and the key to match the key for my service and the URI that was generated after deployment, I ran the endpoint.py script to get inference from the deployed model.
 
 #### (Optional) Benchmark
-To do this, we make sure **Apache Benchmark** is installed and available. After executing the **endpoint.py** script, we run the **benchmark.sh** scripe to load-test our deployed model.
+To do this, we make sure **Apache Benchmark** is installed and available. After executing the **endpoint.py** script, we run the **benchmark.sh** scripe to load-test our deployed model. Checking if *Apache Benchmark* is available and running the benchmark.sh script. Results of load-testing our deployed model. This gives us insights on things like: Requests per second, Average time per request, Number of failed requests, etc.
 
-*Figure 24-25-26: Benchmark*
-![Benchmark](images/benchmark.sh2.png)
-Checking if *Apache Benchmark* is available and running the benchmark.sh script.
+*Benchmark*
+![Benchmark](screen/Benchmark.png)
 
-![Benchmark](images/benchmark.sh3.png)
-Results of load-testing our deployed model.
-
-![Benchmark](images/benchmark.sh4.png)![Benchmark](images/benchmark.sh5.png)
-This gives us insights on things like: Requests per second, Average time per request, Number of failed requests, etc.
 
 ### Create and publish a pipeline
 For this step, I used the **aml-pipelines-with-automated-machine-learning-step** Jupyter Notebook to create a **Pipeline**
-
 I created, consumed and published the best model for the bank marketing dataset using AutoML with Python SDK.
-
-*Figure 27: Create a Pipeline in the SDK*
-![Pipeline SDK](images/PipelineSDK.png)
 After updating the notebook to have the same keys, URI, dataset, cluster, and model names already created, I run through the cells to create a pipeline.
+This is the pipeline created in the *Pipelines* section of Azure ML Studio. This is the Pipeline Overview in the Azure ML Studio.This is the REST endpoint in Azure ML Studio, with a status of ACTIVE.
 
-*Figure 28: Pipeline in Azure Studio*
-![Pipeline Studio](images/PipelineStudio4.png)
-This is the pipeline created in the *Pipelines* section of Azure ML Studio.
+Create a Pipeline in the SDK*
+![Pipeline SDK](screen/RunDetails.png)
 
-*Figure 29: Pipeline Overview in Azure Studio*
-![Pipeline Overview](images/PipelineStudio2.png)
-This is the Pipeline Overview in the Azure ML Studio.
+*Pipeline Jobs in Azure Studio*
+![Pipeline Studio](screen/PipelineJobs.png)
 
-*Figure 30-31-32: Create the REST endpoint*
-![Pipeline Endpoint](images/PipelineEndpoint2.png)
+*Pipeline Endpoints in Azure Studio*
+![Pipeline Overview](screen/PipelineEndpoints.png)
 
-![Pipeline Endpoint](images/PipelineEndpoint.png)
+*The REST endpoint*
+![Pipeline Endpoint](screen/Bankmarketing.png)
 
-![Published Pipeline](images/PublishedPipeline.png)
-This is the REST endpoint in Azure ML Studio, with a status of ACTIVE.
 
 ## Screen Recording
 [Youtube Link](https://youtu.be/kvaaKVKnJQE)
