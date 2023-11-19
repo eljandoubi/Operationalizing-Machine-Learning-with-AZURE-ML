@@ -161,7 +161,7 @@ This is the Pipeline Overview in the Azure ML Studio.
 This is the REST endpoint in Azure ML Studio, with a status of ACTIVE.
 
 ## Screen Recording
-[Youtube Link]([https://www.youtube.com/](https://youtu.be/kvaaKVKnJQE))
+![Youtube Link]([https://www.youtube.com/](https://youtu.be/kvaaKVKnJQE))
 
 ## Standout Suggestions
 My suggestion is enabling Deep Learning. This will take more time to run, but can improve the results by training and testing more models.
