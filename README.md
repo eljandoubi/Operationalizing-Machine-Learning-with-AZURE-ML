@@ -134,6 +134,9 @@ Create a Pipeline in the SDK*
 *Pipeline Jobs in Azure Studio*
 ![Pipeline Studio](screen/PipelineJobs.png)
 
+*Completed Jobs in Azure Studio*
+![Jobs Complete](screen/PipelineComplete.png)
+
 *Pipeline Endpoints in Azure Studio*
 ![Pipeline Overview](screen/PipelineEndpoints.png)
 
